@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.universe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* .love-text {
+  position: absolute;
+  color: #ff99cc;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+  animation: floatText 10s linear infinite;
+  white-space: nowrap;
+  user-select: none;
+  z-index: 3;
+} */
+.love-text {
+  position: absolute;
+  color: #ff99cc;
+  font-size: 4vw; /* responsive */
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66b2;
+  animation: floatText 10s linear infinite;
+  white-space: nowrap;
+  user-select: none;
+  z-index: 3;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  animation: floatHeart 10s linear infinite;
+  z-index: 2;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+/* .love-photo {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff99cc;
+  animation: floatImage 15s linear infinite;
+  z-index: 1;
+  object-fit: cover;
+} */
+.love-photo {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff99cc;
+  animation: floatImage 5s linear infinite;
+  z-index: 1;
+  object-fit: cover;
+  max-width: 30vw; /* responsive image */
+  height: auto;
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 1;
+  }
+}
